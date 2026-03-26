@@ -124,27 +124,27 @@ function AiChat({ currentWeatherData, t, lang }) {
         </div>
       )}
 
-      <div className="flex gap-4">
+      <div className="flex gap-2 sm:gap-4 bg-white/5 dark:bg-black/20 p-2 rounded-xl border border-white/10">
         <input
           type="text"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && askAi()}
           placeholder={t("askPlaceholder") || "Ask a question..."}
-          className="flex-1 px-4 py-2.5 bg-white/5 dark:bg-[#252525] border border-white/10 dark:border-white/10 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-all text-base"
+          className="flex-1 min-w-0 px-3 py-2 bg-transparent outline-none text-white placeholder-gray-500 text-sm"
         />
 
         <button
           onClick={askAi}
           disabled={isLoading || !question.trim()}
-          className="flex items-center gap-2 px-6 py-2 bg-white/10 dark:bg-white/5 border border-white/20 hover:border-blue-400/50 hover:bg-blue-400/10 rounded-xl transition-all duration-300 font-bold text-base uppercase tracking-widest disabled:opacity-30 disabled:hover:border-white/20 disabled:hover:bg-white/5 active:scale-95"
+          className="flex items-center justify-center gap-2 px-3 sm:px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 font-bold text-xs uppercase tracking-widest disabled:opacity-30 active:scale-95 whitespace-nowrap"
         >
           {isLoading ? (
             <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
           ) : (
             <>
               {t("ask") || "Ask"}
-              <BsSend size={12} className="text-gray-50" />
+              <BsSend size={12} className="text-gray-400" />
             </>
           )}
         </button>
