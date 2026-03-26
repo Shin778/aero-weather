@@ -23,7 +23,7 @@ function AiChat({ currentWeatherData, t, lang }) {
           { role: "user", content: userMessage },
         ],
         temperature: 0.7,
-        max_tokens: 150,
+        max_tokens: 300,
       },
       {
         headers: {
