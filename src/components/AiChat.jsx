@@ -131,20 +131,20 @@ function AiChat({ currentWeatherData, t, lang }) {
           onChange={(e) => setQuestion(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && askAi()}
           placeholder={t("askPlaceholder") || "Ask a question..."}
-          className="flex-1 min-w-0 px-3 py-2 bg-transparent outline-none text-white placeholder-gray-500 text-sm"
+          className="flex-1 min-w-0 px-3 py-2 bg-transparent outline-none text-white placeholder-gray-100 text-sm"
         />
 
         <button
           onClick={askAi}
           disabled={isLoading || !question.trim()}
-          className="flex items-center justify-center gap-2 px-3 sm:px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 font-bold text-xs uppercase tracking-widest disabled:opacity-30 active:scale-95 whitespace-nowrap"
+          className="flex items-center gap-2 px-6 py-2 bg-white/50 dark:bg-white/10 border border-black/10 dark:border-white/20 hover:border-blue-500/50 hover:bg-blue-500/10 rounded-xl transition-all duration-300 font-black text-[11px] uppercase tracking-widest text-gray-950 dark:text-white disabled:opacity-30 active:scale-95 whitespace-nowrap"
         >
           {isLoading ? (
             <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
           ) : (
             <>
               {t("ask") || "Ask"}
-              <BsSend size={12} className="text-gray-400" />
+              <BsSend size={12} className="text-gray-900 dark:text-gray-400" />
             </>
           )}
         </button>
